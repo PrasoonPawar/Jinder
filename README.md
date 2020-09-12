@@ -1,1 +1,2 @@
-# Jinder
+# Welcome to Jinder
+A location-based job-search platform that allows both Employers and Jobseekers to like or dislike. Employers can post their job listings and job seekers can then search through these listings (based on their preferences). The employers will also search for potential candidates. One of the features in the app is chatting with the hiring managers and corporates of the company with a relevant interest. The two sides can chat if they match with each other when searching through the postings. Building contact and filtering candidates and jobs based on user preferences.
