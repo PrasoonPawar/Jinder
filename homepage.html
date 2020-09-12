@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<title>Jinder - Better opportunity awaits...</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body class="loginbody">
+<img src="final2.jpg" alt="logo" style='position:absolute; top:0; left:3;' width="250" height="140"/>
+  <h1 class="h1login">
+		Welcome to Jinder
+  </h1>
+  <div class = "navigation">
+    <a class = "current"  href = "#home">Home</a>
+    <a href = "#features" onclick="openPage('features', this)">Features</a>
+    <a href = "#support" onclick="openPage('support', this)">Support</a>
+	<a href = "#about" onclick="openPage('about', this)">About Us</a>
+    <a href = "login.html"  style='position:absolute; top:8; right:125px;'>Log In</a>
+	<a href = "signup.html"  style='position:absolute; top:8; right:8px;'>Sign Up</a>
+  </div>
+  
+  <div class="slideshowImages" style="max-width:800px">
+  <div class="w3-display-middle w3-large w3-container">
+	 <img class="mySlides animate-left" src="5.jpg" style="width:110%">
+	 <img class="mySlides animate-left" src="6.jpg" style="width:110%">
+	 <img class="mySlides animate-left" src="7.jpg" style="width:110%">
+	 <img class="mySlides animate-left" src="8.jpg" style="width:110%">
+	 <div class="fontcolor w3-center w3-container w3-section w3-badge w3-large w3-text-white w3-display-bottommiddle" style="width:110%">
+	 <div class="swipeLeft hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+	 <div class="swipeRight hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+	 </div>
+  </div>
+  </div>
+  <br/>
+  <script type = "text/javascript">
+    $("a.current").click(function(){
+      $("a.current").css("background-color", "black");
+    $(this).css("background-color", "red");
+    });
+    </script>
+	
+<!For the slideshow>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000);    
+}
+</script>
+
+<!For the Slideshow indicators>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+
+<div id="features">
+    <h3 class="h3login">
+		Features
+  </h3>
+    <div class="slideshowImages" style="max-width:800px">
+  <div class="w3-display-middle w3-large w3-container">
+	 <img class="mySlides1 animate-left" src="features1.jpg" style="width:110%">
+	 <img class="mySlides1 animate-left" src="features2.jpg" style="width:110%">
+	 <img class="mySlides1 animate-left" src="features3.jpg" style="width:110%">
+	 <img class="mySlides1 animate-left" src="features4.jpg" style="width:110%">
+	 <div class="fontcolor w3-center w3-container w3-section w3-badge w3-large w3-text-white w3-display-bottommiddle" style="width:110%">
+	 <div class="swipeLeft hover-text-khaki" onclick="plusDivs1(-1)">&#10094;</div>
+	 <div class="swipeRight hover-text-khaki" onclick="plusDivs1(1)">&#10095;</div>
+	 </div>
+  </div>
+  </div>
+<br>
+  <p class="fontc">
+&#x2660; Drag and drop jobs management system. <br><br>
+&#x2660; An advanced application that can handle multiple users concurrently.<br><br>
+&#x2660; Managers throughout the organization can connect to a common platform to share information.<br><br>
+&#x2660; A user experience that is adapted to your needs. <br><br>
+&#x2660; Access the data you need, when you need it, without information overload. <br><br>
+&#x2660; Create a positive first impression for your business. <br><br>
+</p> 
+  </div>
+  
+<!For the slideshow>
+<script>
+var myIndex = 4;
+carousel1();
+
+function carousel1() {
+    var i;
+    var x = document.getElementsByClassName("mySlides1");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel1, 5000);    
+}
+</script>
+
+<!For the Slideshow indicators>
+<script>
+var slideIndex = 1;
+showDivs1(slideIndex);
+
+function plusDivs1(n) {
+  showDivs1(slideIndex += n);
+}
+
+function currentDiv1(n) {
+  showDivs1(slideIndex = n);
+}
+
+function showDivs1(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides1");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+    <div id="support">
+    <h4 class="h4login">
+		Support
+  </h4>
+	<br>
+	<p class="fontc"> There is a 24hrs chat system available where you can talk to a person and resolve your issue </p>
+	<br>
+	<p class="fontc">You can also always email us your feedback or problems at <a href="mailto:support@jinder.com">support@jinder.com</a> </p>
+	<br>
+	<p class="fontc"> We also have toll free service number where you can call and solve your queries. Call <a href="tel:1-888-354-6337"> +1(888)-3ji-nder </a> </p>
+	<br>
+
+  </div>
+  
+    <div id="about">
+    <h5 class="h5login">
+		About Us
+  </h5>
+	<p class="fontc">
+	<b> Number of Jobs posted </b> 
+	<p class="fontc"> 4780 </p>
+	<br><br> <b class="fontc"> Number of Job Seekers </b>
+	<p class="fontc"> 5506 </p>
+		<br><br> <b class="fontc"> Number of Matches </b>
+		<p class="fontc"> 2500 </p>
+	</p>
+  </div>
+ <!Script for full page navigation> 
+ <script>
+ function openPage(pageName,elmnt) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script> 
+  
+<script type = "text/javascript"  src = "loginValidation_r.js" ></script>
+
+<footer class = "footerClass">
+<div class = "fontcolor">
+      <p>&copy;. Jinder Corp, 2018. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>

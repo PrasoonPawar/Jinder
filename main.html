@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+   <head>
+		<meta charset="utf-8">
+		<title>Log in - Jinder</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    </script>
+      <script type = "text/javascript" 
+         src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"></script>
+      
+      <script type = "text/javascript">
+         Ext.onReady(function() {
+			var jobID = 0;
+        var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        var deviceHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+        console.log(deviceWidth);
+        function addNextJob() {
+            /*retrive the next job from db*/
+            var newJob = "job" + jobID++;
+            Ext.getCmp('mainPanel').add(
+                [{
+                    xtype: 'panel',
+                    title: "job" + jobID,
+                    id: "job" + jobID,
+                    width: deviceWidth/5,
+                    html: 'dummy description',
+                    listeners: {
+                        afterrender: function (view) {
+                            Ext.getCmp("job" + jobID).el.setLeft((deviceWidth/2) - (Ext.getCmp("job" + jobID).getWidth()/2));
+                            console.log(screen.height);
+                            Ext.getCmp("job" + jobID).el.setTop((deviceHeight/2)-50);
+                        this.source = new Ext.drag.Source({
+                element: Ext.getCmp("job" + jobID).el,
+                constrain: {
+                    x: [0, 1300],
+                    y: [deviceHeight/2, deviceHeight/2]
+
+                },
+
+                listeners: {
+
+                    dragend: function (source, info) {
+                        var pos = info.element.current;
+                        if (pos.x >= (deviceWidth - (deviceWidth / 4)) - Ext.getCmp("job" + jobID).getWidth()) {
+                            console.log('job applied');
+                            source.getElement().hide();
+                             Ext.toast('Applied');
+                            addNextJob();
+                        } else if (pos.x <= deviceWidth / 4) {
+                            console.log('job rejected');
+                            source.getElement().hide();
+                            Ext.toast('Ignored');
+                            addNextJob();
+                        } else {
+                            console.log('bring me backkk');
+                            source.getElement().setLeft((deviceWidth/2) - (Ext.getCmp("job" + jobID).getWidth()/2));
+                            //console.log(pos.x + "///" + pos.y);
+                        }
+                        //source.getElement().setHtml('Drag Me!');
+                    }
+                }
+            });
+                        }
+
+                    }
+                }]);
+
+
+        }
+
+  
+        Ext.create('Ext.panel.Panel', {
+            xtype: 'panel',
+            //controller: 'drag-simple',
+            id: 'mainPanel',
+            width:  deviceWidth,
+            height: deviceHeight,
+            title: 'Jinder, start swiping start working',
+            bodyPadding: 5,
+            bodyStyle: {
+            'background': 'url(http://159.65.173.161/redside.png), url(http://159.65.173.161/greenside.png)',
+            'background-repeat': 'no-repeat, no-repeat',
+            'background-position': 'left, right',
+            'background-size':  (deviceWidth / 4) + 'px,' + (deviceWidth/4) + 'px',
+
+
+            },
+            renderTo: Ext.getBody(),
+            listeners: {
+                afterrender: function () {
+                    addNextJob();
+                }
+            }
+           
+
+        });
+		 
+		 });
+		var userType = <?php echo json_encode($user_type);?>;
+		alert(userType);
+      </script>
+   </head>
+   
+   <body>
+	  <body class="loginbody">
+<img src="final2.jpg" alt="logo" style='position:absolute; top:0; left:3;' width="250" height="140"/>
+  <h1 class="h1login">
+		Welcome to Jinder
+  </h1>
+  <div class = "navigation">
+    <a class = "current"  href = "main.html">Home</a>
+    <a href = "#features" onclick="openPage('features', this)">Features</a>
+    <a href = "#support" onclick="openPage('support', this)">Support</a>
+	<a href = "#about" onclick="openPage('about', this)">About Us</a>
+  </div>
+  
+   <script type = "text/javascript">
+    $("a.current").click(function(){
+      $("a.current").css("background-color", "black");
+    $(this).css("background-color", "red");
+    });
+    </script>
+	
+	<div id = "panel" > </div>
+  
+<footer class = "footerClass">
+<div class = "fontcolor">
+      <p>&copy;. Jinder Corp, 2018. All rights reserved.</p>
+</div>
+</footer>
+   </body>
+</html>
+

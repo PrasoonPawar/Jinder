@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<title>Sign up - Jinder</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <script type = "text/javascript" src="functions.js"></script>
+    </head>
+<body class="loginbody">
+      	  <img src="final2.jpg" alt="logo" style='position:absolute; top:0; left:3;' width="250" height="143"/>
+
+  <h1 class="h1login">
+
+		Welcome to Jinder
+  </h1>
+	<div class = "navigation">
+    <a class = "current"  href = "homepage.html">Home</a>
+    <a href = "#features" onclick="openPage('features', this)">Features</a>
+    <a href = "#support" onclick="openPage('support', this)">Support</a>
+	<a href = "#about" onclick="openPage('about', this)">About Us</a>
+  </div>
+  
+  <div class="slideshowImages" style="max-width:800px">
+	 <img class="mySlides animate-left" src="5.jpg" style="width:110%">
+	 <img class="mySlides animate-left" src="6.jpg" style="width:110%">
+	 <img class="mySlides animate-left" src="7.jpg" style="width:110%">
+	 <img class="mySlides animate-left" src="8.jpg" style="width:110%">
+	 <div class="fontcolor w3-center w3-container w3-section w3-badge w3-large w3-text-white w3-display-bottommiddle" style="width:110%">
+	 <div class="swipeLeft hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+	 <div class="swipeRight hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+	 </div>
+  </div>
+  <br/>
+  
+   <script type = "text/javascript">
+    $("a.current").click(function(){
+      $("a.current").css("background-color", "black");
+    $(this).css("background-color", "red");
+    });
+    </script>
+  
+<!For the slideshow>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000);    
+}
+</script>
+
+<!For the Slideshow indicators>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+  
+<div class="signUp">
+<div class="form">
+<form action="signUpAndLogin.php" method="post" id="SignUp1">
+	<div class="loginlabel">
+    <h2 class="h2login">Sign Up</h2></div>
+	<p>Already have a Jinder account?
+	<a href="login.html" class="allbuttons" type="submit" name="login" value="login">Login</a>
+	</p>
+	<div class="fontcolor">
+	
+<table>
+	<form action="">
+		<input type="hidden" id="usertype" name="usertype"/>
+		<input type="radio" name="choose" id="employer" value="employer">Employer<br>
+		<input type="radio" name="choose" id="jobSeeker" value="jobSeeker">Job Seeker<br>
+	</form>
+	<tr><td>First Name:</td><td><input type="text" placeholder="John" name="fname" id="fname"" size="30" /></td></tr>
+	<tr><td></td><td id="fname_i" class="error"></td></tr>
+	<tr><td>Last Name:</td><td><input type="text" placeholder="Hazel" name="lname" id="lname" size="30" /></td></tr>
+	<tr><td></td><td id="lname_i" class="error"></td></tr>
+	<tr><td>DOB:</td><td> <input type="date" name="dob" id="dob" size="30" /></td></tr>
+	<tr><td></td><td id="dob_i" class="error"></td></tr>
+ 	<tr><td>Email:</td><td> <input type="text" placeholder="johnhazel@gmail.com" name="email" id="email" size="30" /></td></tr>
+ 	<tr><td></td><td id="email_i" class="error"></td></tr>
+ 	<tr><td>Company Name:</td><td> <input type="text" placeholder="CompanyName" name="company" id="company" size="30" /></td></tr>  
+ 	<tr><td></td><td id="company_i" class="error"></td></tr>   
+ 	<tr><td>Password:</td><td> <input type="password" placeholder="Password" name="pswd" id="pswd" size="30" /></td></tr>  
+ 	<tr><td></td><td id="pswd_i" class="error"></td></tr>   
+ 	<tr><td>Confirm Password:</td><td> <input type="password" placeholder="Confirm Password" name="pswdr" id="pswdr" size="30" /></td></tr> 
+ 	<tr><td></td><td id="pswdr_i" class="error"></td></tr>            
+</table>
+</div>
+<p>
+	<input type="hidden" name="function" value="sign_up"/>
+	<input class="allbuttons" type="submit" name="SignUp" value="SignUp" />
+	<input class="allbuttons" type="reset" name="Reset" id="Reset" value="Reset" />
+</p>
+
+</form>
+<script type = "text/javascript"  src = "signup_r.js" ></script>
+</div>
+</div>
+
+<footer>
+<div class = "fontcolor">
+      <p>&copy;. Jinder Corp, 2018. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
